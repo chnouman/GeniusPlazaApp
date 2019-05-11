@@ -17,7 +17,7 @@ public class AppPreferencesHelper implements PreferencesHelper {
                                 @PreferenceInfo String prefFileName) {
         mPrefs = context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE);
     }
-
+    //ready to use
 }
 
 

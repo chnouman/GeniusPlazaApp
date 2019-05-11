@@ -34,7 +34,6 @@ public class GeniusPlazaApp extends Application implements HasActivityInjector {
             }else {
                 error.printStackTrace();
             }
-
         });
     }
 

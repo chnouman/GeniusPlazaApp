@@ -85,6 +85,17 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             lastPosition = position;
         }
     }
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                on_attach = false;
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+        });
+        super.onAttachedToRecyclerView(recyclerView);
+    }
 
     public void addAll(List<User> users) {
         items.addAll(users);
@@ -117,7 +128,7 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         @BindView(R.id.emailTV)
         TextView emailTV;
 
-        public UserViewHolder(View itemView) {
+        UserViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

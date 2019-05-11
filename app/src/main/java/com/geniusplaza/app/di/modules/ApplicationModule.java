@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.geniusplaza.app.GeniusPlazaApp;
-import com.geniusplaza.app.adapters.UsersAdapter;
 import com.geniusplaza.app.data.AppDataManager;
 import com.geniusplaza.app.data.DataManager;
 import com.geniusplaza.app.data.prefs.AppPreferencesHelper;
@@ -14,7 +13,6 @@ import com.geniusplaza.app.data.prefs.PreferencesHelper;
 import com.geniusplaza.app.data.remote.ApiHelper;
 import com.geniusplaza.app.data.remote.AppApiHelper;
 import com.geniusplaza.app.di.ApplicationContext;
-import com.geniusplaza.app.di.PerActivity;
 import com.geniusplaza.app.di.PerAppCompositDisposible;
 import com.geniusplaza.app.di.PreferenceInfo;
 import com.geniusplaza.app.utils.rx.AppSchedulerProvider;

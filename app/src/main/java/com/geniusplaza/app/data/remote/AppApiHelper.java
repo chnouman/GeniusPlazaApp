@@ -4,9 +4,6 @@ package com.geniusplaza.app.data.remote;
 import com.geniusplaza.app.data.remote.model.RegisterUserResponse;
 import com.geniusplaza.app.data.remote.model.UsersResponse;
 import com.geniusplaza.app.utils.AppConstants;
-
-import java.util.Map;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -16,7 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Field;
 
 @Singleton
 public class AppApiHelper implements ApiHelper {
