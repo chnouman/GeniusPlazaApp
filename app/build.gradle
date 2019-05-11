@@ -54,4 +54,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
 }

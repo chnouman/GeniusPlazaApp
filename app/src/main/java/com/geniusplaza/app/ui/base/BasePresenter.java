@@ -67,15 +67,7 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
         return mCompositeDisposable;
     }
 
-    @Override
-    public void handleApiError(Throwable error) {
-        //Will handle common API error here.
-    }
 
-    @Override
-    public void setUserAsLoggedOut() {
-//        getDataManager().setAccessToken(null);
-    }
 
     public static class MvpViewNotAttachedException extends RuntimeException {
         public MvpViewNotAttachedException() {

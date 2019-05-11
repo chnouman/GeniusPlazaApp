@@ -38,4 +38,6 @@ ext {
     retrofitVersion = '2.5.0'
     //butterknife version
     butterKnifeVersion = '10.1.0'
+    //glideVersion
+    glideVersion = '4.9.0'
 }

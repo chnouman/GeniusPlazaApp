@@ -4,6 +4,8 @@ package com.geniusplaza.app.di.components;
 import com.geniusplaza.app.GeniusPlazaApp;
 import com.geniusplaza.app.di.builder.ActivityBuilder;
 import com.geniusplaza.app.di.modules.ApplicationModule;
+import com.geniusplaza.app.ui.main.MainActivity;
+
 import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;

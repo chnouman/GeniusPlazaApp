@@ -1,5 +1,7 @@
 package com.geniusplaza.app.ui.main;
 
+import com.geniusplaza.app.adapters.UsersAdapter;
+
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.disposables.CompositeDisposable;
@@ -9,8 +11,8 @@ public class MainModule {
 
 
     @Provides
-    MainMvpPresenter<MainMvpView> getScreenTimePresenter(MainPresenter<MainMvpView> screenTimePresenter) {
-        return screenTimePresenter;
+    MainMvpPresenter<MainMvpView> getMainPresenter(MainPresenter<MainMvpView> mainPresenter) {
+        return mainPresenter;
     }
 
     @Provides
@@ -18,4 +20,8 @@ public class MainModule {
         return new CompositeDisposable();
     }
 
+    @Provides
+    UsersAdapter provideUserAdapter() {
+        return new UsersAdapter();
+    }
 }
