@@ -21,7 +21,7 @@ public class AppConstants {
 
     public static class Preference {
 
-        public static final String PREFERENCE_NAME = "momentPrefStorage";
+        public static final String PREFERENCE_NAME = "GPPrefStorage";
         public static final String FIRST_LAUNCH = "firstLaunch";
     }
 

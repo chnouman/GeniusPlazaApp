@@ -7,5 +7,5 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class MainProvider {
 
     @ContributesAndroidInjector(modules = {MainModule.class})
-    abstract MainActivity provideScreenTImeFragmentFactory();
+    abstract MainActivity provideMainFactory();
 }
