@@ -27,6 +27,13 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".ui.register.RegisterUserActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppThemeNoActionBar"
+            />
 
     </application>
 

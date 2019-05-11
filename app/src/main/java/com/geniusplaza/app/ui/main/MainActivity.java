@@ -15,6 +15,7 @@ import com.geniusplaza.app.R;
 import com.geniusplaza.app.adapters.UsersAdapter;
 import com.geniusplaza.app.data.remote.model.User;
 import com.geniusplaza.app.ui.base.BaseActivity;
+import com.geniusplaza.app.ui.register.RegisterUserActivity;
 import com.geniusplaza.app.utils.ViewAnimation;
 
 import java.util.List;
@@ -53,6 +54,9 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
     @Inject
     UsersAdapter usersAdapter;
 
+    @Inject
+    LinearLayoutManager linearLayoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +64,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
         mPresenter.onAttach(this);
         setUnBinder(ButterKnife.bind(this));
 
+        getSupportActionBar().setElevation(8);
         fetchData();
     }
 
@@ -68,27 +73,30 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
         if (isNetworkConnected()) {
             showLoading();
         } else {
-            onError();
+            onErrorLayout();
         }
     }
 
     @Override
-    public void onError() {
+    public void onErrorLayout() {
         errorMessageTV.setText(R.string.retry_text);
         progressBar.setVisibility(View.GONE);
+        retryButton.setVisibility(View.VISIBLE);
         errorMessageTV.setVisibility(View.VISIBLE);
         lytProgress.setVisibility(View.VISIBLE);
+
     }
+
 
     @Override
     public void showLoading() {
         progressBar.setVisibility(View.VISIBLE);
+        retryButton.setVisibility(View.GONE);
         errorMessageTV.setText(R.string.getting_users);
         errorMessageTV.setVisibility(View.VISIBLE);
         lytProgress.setVisibility(View.VISIBLE);
         lytProgress.setAlpha(1.0f);
         recyclerView.setVisibility(View.GONE);
-
         new Handler().postDelayed(() -> ViewAnimation.fadeOut(lytProgress), LOADING_DURATION);
 
         new Handler().postDelayed(() -> setupRecyclerView(), LOADING_DURATION + 400);
@@ -96,13 +104,14 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
 
     @Override
     public void hideLoading() {
+
         lytProgress.setVisibility(View.GONE);
     }
 
     private void setupRecyclerView() {
         recyclerView.setVisibility(View.VISIBLE);
         usersAdapter.setUsersInterface(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(usersAdapter);
         mPresenter.getUsers();
@@ -122,7 +131,7 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
 
     @Override
     public void onUserClick(User user, int position) {
-        showToast(user.getFirstName() + getString(R.string.user_click_message));
+        showToast(user.getFirstName() + " " + getString(R.string.user_click_message));
     }
 
     @Override
@@ -130,5 +139,13 @@ public class MainActivity extends BaseActivity implements MainMvpView, UsersAdap
         showToast(getString(R.string.user_long_click_message));
     }
 
+    @OnClick(R.id.retryButton)
+    void onRetry() {
+        fetchData();
+    }
 
+    @OnClick(R.id.registerButton)
+    void onRegisterButtonClick() {
+        startActivity(RegisterUserActivity.getStartingIntent(MainActivity.this));
+    }
 }

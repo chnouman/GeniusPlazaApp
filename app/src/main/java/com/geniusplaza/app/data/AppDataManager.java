@@ -36,7 +36,7 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Observable<RegisterUserResponse> registerUser(Map<String, Object> userParams) {
-        return mApiHelper.registerUser(userParams);
+    public Observable<RegisterUserResponse> registerUser(String name, String jobTitle) {
+        return mApiHelper.registerUser(name,jobTitle);
     }
 }

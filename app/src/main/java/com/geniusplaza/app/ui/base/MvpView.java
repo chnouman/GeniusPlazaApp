@@ -16,7 +16,7 @@ public interface MvpView {
 
     void hideLoading();
 
-    void onError();
+    void onErrorLayout();
 
     boolean isNetworkConnected();
 

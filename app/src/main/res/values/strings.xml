@@ -7,6 +7,13 @@
     <string name="retry_text">Fail to fetch Data</string>
     <string name="user_click_message"> clicked</string>
     <string name="user_long_click_message">Long click</string>
+    <string name="sign_up_text">Infinite knowledge awaits!</string>
+    <string name="fill_the_form_below_and_let_s_get_you_started">Fill the form below and let\'s get you started.</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Your Name</string>
+    <string name="job">Your Job Title</string>
+    <string name="registering_user">Registering user</string>
+    <string name="network_disconnected">Network Disconnected</string>
 
     <array name="mdcolor_50">
         <item name="red_50" type="color">#fde0dc</item>

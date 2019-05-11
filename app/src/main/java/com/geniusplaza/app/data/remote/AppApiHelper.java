@@ -16,6 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Field;
 
 @Singleton
 public class AppApiHelper implements ApiHelper {
@@ -54,7 +55,7 @@ public class AppApiHelper implements ApiHelper {
     }
 
     @Override
-    public Observable<RegisterUserResponse> registerUser(Map<String, Object> params) {
-        return getClient().registerUser(params);
+    public Observable<RegisterUserResponse> registerUser(String name,  String jobTitle) {
+        return getClient().registerUser(name,jobTitle);
     }
 }
