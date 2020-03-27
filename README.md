@@ -1,2 +1,2 @@
 # GeniusPlazaApp
-Android Coding Test for Genius Plaza
+Android MVP Sample
